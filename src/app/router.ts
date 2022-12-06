@@ -7,6 +7,8 @@ import { listCategories } from './useCases/categories/listCategories';
 import { createProduct } from './useCases/products/createProduct';
 import { listProducts } from './useCases/products/listProducts';
 import { listProductsByCategory } from './useCases/categories/listProductsByCategory';
+import { listOrders } from './useCases/orders/listOrders';
+import { createOrder } from './useCases/orders/createOrder';
 
 export const router = Router();
 
@@ -42,15 +44,11 @@ router.get('/categories/:categoryId/products', listProductsByCategory);
 
 // List orders
 
-router.get('/orders', (req, res) => {
-  res.send('OK');
-});
+router.get('/orders', listOrders);
 
 // create order
 
-router.post('/orders', (req, res) => {
-  res.send('OK');
-});
+router.post('/orders', createOrder);
 
 // change order status
 
